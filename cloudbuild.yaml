@@ -1,0 +1,7 @@
+steps:
+  - name: 'gcr.io/cloud-builders/gsutil'
+    args: ['-m', 'rsync', '-r', '-c', '-d', '.', 'gs://node_devops_test']
+    
+  - name: node
+    entrypoint: npm
+    args: ['install']
